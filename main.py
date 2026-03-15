@@ -7,7 +7,7 @@ def main():
 
     # welcome message
     print("The Very Hungry Database")
-    print("Command it using:\n* SET <key> <value>\n* GET <key>\n* EXIT")
+    print("Commands:\n* SET <key> <value>\n* GET <key>\n* EXIT")
     print("\n\nOoOoOoOoO(:>)")
     print("^ ^ ^ ^ ^\n")
 
@@ -20,7 +20,6 @@ def main():
             break
 
         if not command:
-            print("BLEH not a command")
             continue
 
         # parse
@@ -33,7 +32,7 @@ def main():
             val = parts[2]
 
             db.set(key, val)
-            print("nom nom nom")
+            print("OK")
 
         # if GET
         elif action == "GET" and len(parts) == 2:
@@ -42,16 +41,16 @@ def main():
             result = db.get(key)
 
             if result is None:
-                print("mmmmmrrrr not in here...")
+                print(NULL)
             else:
-                print(f"*throws up* here you go: {result}")
+                print(result)
 
         elif action == "EXIT":
             print("bye bye")
             break
 
         else:
-            print("UMMM not a command!")
+            print("ERROR")
 
 if __name__ == "__main__":
     main()
