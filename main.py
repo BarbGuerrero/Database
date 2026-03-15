@@ -5,12 +5,6 @@ def main():
 
     db = Database()
 
-    # welcome message
-    print("The Very Hungry Database")
-    print("Commands:\n* SET <key> <value>\n* GET <key>\n* EXIT")
-    print("\n\nOoOoOoOoO(:>)")
-    print("^ ^ ^ ^ ^\n")
-
     # input loop
     while True:
         # prepare for input
@@ -41,7 +35,7 @@ def main():
             result = db.get(key)
 
             if result is None:
-                print(NULL)
+                print("")
             else:
                 print(result)
 
