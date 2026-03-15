@@ -14,7 +14,7 @@ class Database:
     # replay log to rebuild index each time
     def load(self):
         try:
-            with open(self.filename, "a") as b:
+            with open(self.filename, "r") as b:
                 # parse the input to check for SET
                 for line in b:
                     parts = line.strip().split(" ", 2)
@@ -23,8 +23,6 @@ class Database:
                         key = parts[1]
                         val = parts[2]
                         self.index.set(key, val)
-                    else:
-                        print("Invalid Command!\n")
 
         except FileNotFoundError:
             # db DNE
